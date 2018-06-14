@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  private title: string = 'Tour of Heroes';
+  private isLogin: boolean = false;
+  
+  public constructor() { }
 
-  constructor() { }
-
-  ngOnInit() {
+  public ngOnInit() {
   }
 
 }

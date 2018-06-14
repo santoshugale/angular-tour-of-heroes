@@ -19,7 +19,7 @@ import { HeaderComponent } from './header/header.component';
     HeroDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

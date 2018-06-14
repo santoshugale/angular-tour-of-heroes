@@ -1,3 +1,17 @@
-<p>
-  header works!
-</p>
+<div class="header">
+  <!-- <a href="#default" class="logo">CompanyLogo</a> -->
+  <label class="title">{{title}}</label>
+  <div class="header-right">
+    <a class="active"
+      routerLink="/"
+      routerLinkActive="active">Home</a>
+    <a routerLink="/contact"
+      routerLinkActive="active">Contact</a>
+    <a *ngIf="isLogin else login"
+      routerLink="/login"
+      routerLinkActive="active">Logout</a>
+    <ng-template #login>
+      <a routerLink="login">Login</a>
+    </ng-template>
+  </div>
+</div>
