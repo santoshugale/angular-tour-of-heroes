@@ -1,0 +1,28 @@
+<div class="container">
+  <form class="form-signin">
+    <h2>Please sign in</h2>
+    <input *ngIf="errorMessage"
+      type="text"
+      [(ngModel)]="errorMessage"
+      name="errorMessage"
+      class="form-control"
+      required
+      readonly
+      autofocus>
+    <input type="email"
+      [(ngModel)]="user.name"
+      name="inputEmail"
+      class="form-control"
+      placeholder="Email address"
+      required
+      autofocus>
+    <input type="password"
+      [(ngModel)]="user.password"
+      name="inputPassword"
+      class="form-control"
+      placeholder="Password"
+      required>
+    <button class="btn btn-lg btn-primary btn-block"
+      (click)="login()">Sign in</button>
+  </form>
+</div>

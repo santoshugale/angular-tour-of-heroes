@@ -1,0 +1,20 @@
+<div class="container">
+  <form class="form-register">
+    <h2>Please register</h2>
+    <input type="email"
+      [(ngModel)]="user.name"
+      name="inputEmail"
+      class="form-control"
+      placeholder="Email address"
+      required
+      autofocus>
+    <input type="password"
+      [(ngModel)]="user.password"
+      name="inputPassword"
+      class="form-control"
+      placeholder="Password"
+      required>
+    <button class="btn btn-lg btn-primary btn-block"
+      (click)="register()">Register</button>
+  </form>
+</div>

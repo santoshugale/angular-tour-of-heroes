@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.css']
 })
-export class NavigationComponent implements OnInit {
+export class NavigationComponent {
 
-  public constructor() { }
+  private loggedIn: boolean = false;
 
-  public ngOnInit() {
+  public constructor(private loginService: LoginService) {
+    this.loginService.loggedIn.subscribe((value: boolean) => {
+      this.loggedIn = value;
+    })
   }
 
 }

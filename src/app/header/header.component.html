@@ -6,7 +6,7 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li *ngIf="isLogin else loginOrRegister"
+        <li *ngIf="loggedIn else loginOrRegister"
           routerLinkActive="active">
           <a routerLink="/login">Logout</a>
         </li>
@@ -15,7 +15,7 @@
             <a routerLink="/login">Login</a>
           </li>
           <li routerLinkActive="active">
-            <a routerLink="/regitser">Regitser</a>
+            <a routerLink="/register">Register</a>
           </li>
         </ng-template>
       </ul>
