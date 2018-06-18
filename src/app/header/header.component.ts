@@ -11,7 +11,7 @@ export class HeaderComponent {
   private loggedIn: boolean = false;
 
   public constructor(private loginService: LoginService) {
-    this.loginService.loggedIn.subscribe((value: boolean) => {
+    this.loginService.loggedInSubject.subscribe((value: boolean) => {
       this.loggedIn = value;
     });
   }

@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
 
   public ngOnInit() {
     this.user = new User();
-    this.loginService.loggedIn.next(false);
+    this.loginService.loggedInSubject.next(false);
   }
 
   public login(): void {
@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
 
   private loginSuccess(res: any): void {
     this.loginService.token = res.token;
-    this.loginService.loggedIn.next(true);
+    this.loginService.loggedInSubject.next(true);
     this.router.navigateByUrl('/dashboard');
   }
 

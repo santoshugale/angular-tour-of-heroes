@@ -11,9 +11,19 @@ export class LoginService {
 
   private _token: string;
 
-  public loggedIn: Subject<boolean> = new Subject<boolean>();
+  private _loggedIn: boolean = false;
 
-  public constructor(private http: HttpClient, private messageService: MessagesService) { }
+  public loggedInSubject: Subject<boolean> = new Subject<boolean>();
+
+  public constructor(private http: HttpClient, private messageService: MessagesService) {
+    this.loggedInSubject.subscribe((value: boolean) => {
+      this._loggedIn = value;
+    })
+  }
+
+  public get loggedIn(): boolean {
+    return this._loggedIn;
+  }
 
   public get token(): string {
     return this._token;
