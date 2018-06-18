@@ -10,6 +10,7 @@ import { MessagesComponent } from './messages/messages.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { HeaderComponent } from './header/header.component';
     MessagesComponent,
     DashboardComponent,
     HeaderComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

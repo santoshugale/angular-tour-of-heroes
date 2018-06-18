@@ -1,12 +1,9 @@
 <app-header></app-header>
-<app-navigation></app-navigation>
-<div class="mainContent">
-    <nav>
-        <a routerLink="/dashboard"
-            routerLinkActivate="active">Dashboard</a>
-        <a routerLink="/heroes"
-            routerLinkActivate="active">Heroes</a>
-    </nav>
-    <router-outlet></router-outlet>
-    <app-messages></app-messages>
+<div class="container-fluid">
+    <div class="row">
+        <app-navigation></app-navigation>
+    </div>
+    <div class="col-sm-9 col-md-10 col-md-offset-2 main">
+        <router-outlet></router-outlet>
+    </div>
 </div>
