@@ -9,12 +9,7 @@ import { LoginService } from '../services/login.service';
 })
 export class NavigationComponent {
 
-  private loggedIn: boolean = false;
-
   public constructor(private loginService: LoginService) {
-    this.loginService.loggedInSubject.subscribe((value: boolean) => {
-      this.loggedIn = value;
-    })
   }
 
 }

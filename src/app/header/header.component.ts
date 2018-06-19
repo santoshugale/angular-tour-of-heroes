@@ -8,12 +8,8 @@ import { LoginService } from '../services/login.service';
 })
 export class HeaderComponent {
   private title: string = 'Tour of Heroes';
-  private loggedIn: boolean = false;
 
   public constructor(private loginService: LoginService) {
-    this.loginService.loggedInSubject.subscribe((value: boolean) => {
-      this.loggedIn = value;
-    });
   }
   
 }
