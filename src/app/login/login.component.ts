@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit {
 
   private loginSuccess(res: any): void {
     this.loginService.token = res.token;
+    //TODO: use local storage to store the token
     this.loginService.loggedInSubject.next(true);
     this.router.navigateByUrl('/dashboard');
   }

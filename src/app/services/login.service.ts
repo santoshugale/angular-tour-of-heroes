@@ -9,7 +9,7 @@ import { User } from './user';
 })
 export class LoginService {
 
-  private _token: string;
+  private _token: string = '';
 
   private _loggedIn: boolean = false;
 

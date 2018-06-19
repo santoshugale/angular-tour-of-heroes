@@ -14,4 +14,5 @@ export class CanActivateGuardGuard implements CanActivate {
     state: RouterStateSnapshot, ): Observable<boolean> | Promise<boolean> | boolean {
     return this.loginService.loggedIn;
   }
+  
 }
