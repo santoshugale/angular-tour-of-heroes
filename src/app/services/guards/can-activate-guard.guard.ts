@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { LoginService } from '../login.service';
 
@@ -8,11 +8,14 @@ import { LoginService } from '../login.service';
 })
 export class CanActivateGuardGuard implements CanActivate {
 
-  public constructor(private loginService: LoginService) { }
+  public constructor(private loginService: LoginService,
+    private router: Router) { }
 
   public canActivate(next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot, ): Observable<boolean> | Promise<boolean> | boolean {
-    return this.loginService.loggedIn;
+    if (this.loginService.loggedIn) return true;
+    else this.router.navigateByUrl('/login');
+    return false;
   }
-  
+
 }
