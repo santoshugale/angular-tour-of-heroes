@@ -1,13 +1,38 @@
-<div class="heroes">
-  <h2>My Heroes</h2>
-  <div class="list-group">
-    <div *ngFor="let hero of heroes"
-      class="col-md-12">
+<!-- <div class="container">
+  <div class="list-group heroes">
+    <h3>My Heroes</h3>
+    <div *ngFor="let hero of heroes">
       <a routerLink="/details/{{hero._id}}"
         class="list-group-item list-group-item-action">
-        <span>{{hero._id}}</span>
         {{hero.name}}
+        <span class="badge">{{hero._id}}</span>
       </a>
     </div>
   </div>
+</div> -->
+
+<div class="heroes">
+  <h3>My Heroes</h3>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let hero of heroes">
+      <td>{{hero._id}}</td>
+      <td>{{hero.name}}</td>
+      <td>{{hero.age}}</td>
+      <td>
+        <a class="btn"
+          routerLink="/details/{{hero._id}}">Edit</a>
+      </td>
+      <td>
+        <a class="btn"
+          (click)="deleteHero(hero._id)">Delete</a>
+      </td>
+    </tr>
+  </table>
 </div>

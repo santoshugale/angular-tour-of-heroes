@@ -26,11 +26,16 @@ export class HeroDetailComponent implements OnInit {
     this.location.back();
   }
 
+  public save(): void {
+    this.heroService.updateHero(this.hero).subscribe(() => {
+      this.location.back();
+    });
+  }
+
   private getHero(): void {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.heroService.getHero(+params.get('id'))
         .subscribe(hero => this.hero = hero)
     })
   }
-
 }

@@ -6,6 +6,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { CanActivateGuardGuard } from './services/guards/can-activate-guard.guard';
+import { AddHeroComponent } from './add-hero/add-hero.component';
 
 const appRoute: Routes = [
   {
@@ -20,6 +21,11 @@ const appRoute: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
+    canActivate: [CanActivateGuardGuard]
+  },
+  {
+    path: 'add-hero',
+    component: AddHeroComponent,
     canActivate: [CanActivateGuardGuard]
   },
   {

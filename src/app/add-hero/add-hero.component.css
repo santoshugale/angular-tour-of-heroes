@@ -1,0 +1,10 @@
+.hero-details {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+input.ng-invalid.ng-touched {
+    border: 2px solid red;
+    border-radius: 4px;
+}

@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 
 import { Hero } from '../hero';
 import { MessagesService } from './messages.service';
-import { $ } from 'protractor';
 
 @Injectable({
   providedIn: 'root'
@@ -23,8 +22,17 @@ export class HeroService {
   public getHero(heroId: number): Observable<Hero> {
     this.messageService.add(`HeroService: fetched hero id=${heroId}`);
     return this.httpClient.get<Hero>('http://localhost:3000/hero/' + heroId);
-    // return of(HEROES.find((hero: Hero) => {
-    //   return hero._id == id;
-    // }))
+  }
+
+  public updateHero(hero: Hero): Observable<Hero> {
+    return this.httpClient.put<Hero>('http://localhost:3000/heroes', hero);
+  }
+
+  public addHero(hero: Hero): Observable<Hero> {
+    return this.httpClient.post<Hero>('http://localhost:3000/heroes', hero);
+  }
+
+  public deleteHeroes(heroId: number): Observable<any> {
+    return this.httpClient.delete<any>('http://localhost:3000/hero/' + heroId)
   }
 }

@@ -1,22 +1,14 @@
 <form *ngIf="hero"
   #form="ngForm"
   class="hero-details">
-  <h2>{{ hero.name | uppercase }} Details</h2>
-  <div class="form-group">
-    <label for="id">Id:</label>
-    <input type="text"
-      class="form-control"
-      [(ngModel)]="hero._id"
-      readonly
-      name="id">
-  </div>
+  <h2>Add Hero</h2>
   <div class="form-group">
     <label for="name">Name:</label>
     <input type="text"
       #heroName="ngModel"
+      required
       class="form-control"
       [(ngModel)]="hero.name"
-      required
       name="name">
     <label *ngIf="heroName.invalid && heroName.touched"
       class="alert-danger">Name is required</label>
@@ -24,18 +16,13 @@
   <div class="form-group">
     <label for="age">Age:</label>
     <input type="number"
-      #heroAge="ngModel"
       class="form-control"
       [(ngModel)]="hero.age"
-      required
       name="age">
-    <label *ngIf="heroAge.invalid && heroAge.touched"
-      class="alert-danger">Age is required</label>
   </div>
-  <br>
   <button class="btn btn-success"
     [disabled]="form.invalid"
-    (click)="save()">Update</button>
+    (click)="save()">Add Hero</button>
   <button class="btn btn-primary"
-    (click)="goBack()">go back</button>
+    (click)="goBack()">Go Back</button>
 </form>

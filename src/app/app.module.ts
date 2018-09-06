@@ -14,6 +14,9 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { TokenInterceptor } from './services/interceptor/token-interceptor';
+import { AddHeroComponent } from './add-hero/add-hero.component';
+import { HighlightDirective } from './highlight.directive';
+import { HeroFilterPipe } from './pipe/hero-filter.pipe';
 
 
 @NgModule({
@@ -26,7 +29,10 @@ import { TokenInterceptor } from './services/interceptor/token-interceptor';
     HeaderComponent,
     NavigationComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AddHeroComponent,
+    HighlightDirective,
+    HeroFilterPipe
   ],
   imports: [
     BrowserModule,

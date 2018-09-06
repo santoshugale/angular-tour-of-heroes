@@ -1,10 +1,17 @@
 <div class="container">
-  <div class="dashbord">
+  <div class="list-group dashbord">
     <h3>Top Heroes</h3>
-    <div *ngFor="let hero of heroes">
-      <a routerLink="/details/{{hero._id}}">
-        <div>{{hero.name}}</div>
-      </a>
+    <div class="form-group">
+      <label for="age">Age Filter</label>
+      <input type="text"
+        class="form-control"
+        [(ngModel)]="ageFilter"
+        name="age">
+    </div>
+    <div *ngFor="let hero of heroes | heroFilter:ageFilter">
+      <a routerLink="/details/{{hero._id}}"
+        appHighlight="red"
+        class="list-group-item">{{hero.name}}</a>
     </div>
   </div>
 </div>
