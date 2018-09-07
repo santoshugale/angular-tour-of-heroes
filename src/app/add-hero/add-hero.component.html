@@ -1,8 +1,8 @@
 <form *ngIf="hero"
   #form="ngForm"
   class="hero-details">
-  <h2>Add Hero</h2>
-  <div class="form-group">
+  <h2 class="col-xs-6 col-md-6">Add Hero</h2>
+  <div class="form-group col-xs-6 col-md-6">
     <label for="name">Name:</label>
     <input type="text"
       #heroName="ngModel"
@@ -13,16 +13,18 @@
     <label *ngIf="heroName.invalid && heroName.touched"
       class="alert-danger">Name is required</label>
   </div>
-  <div class="form-group">
+  <div class="form-group col-xs-6 col-md-6">
     <label for="age">Age:</label>
     <input type="number"
       class="form-control"
       [(ngModel)]="hero.age"
       name="age">
   </div>
-  <button class="btn btn-success"
-    [disabled]="form.invalid"
-    (click)="save()">Add Hero</button>
-  <button class="btn btn-primary"
-    (click)="goBack()">Go Back</button>
+  <div class="col-xs-6 col-md-6">
+    <button class="btn btn-success"
+      [disabled]="form.invalid"
+      (click)="save()">Add Hero</button>
+    <button class="btn btn-primary"
+      (click)="goBack()">Go Back</button>
+  </div>
 </form>

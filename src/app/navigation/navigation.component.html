@@ -1,12 +1,10 @@
-<div class="col-sm-3 col-md-2 sidebar">
-  <ul class="nav nav-sidebar" *ngIf="loginService.loggedIn">
-    <li>
-      <a routerLink="/dashboard"
-        routerLinkActive="active">Dashboard</a>
-      <a routerLink="/heroes"
-        routerLinkActive="active">Heroes</a>
-        <a routerLink="/add-hero"
-        routerLinkActive="active">Add Hero</a>
-    </li>
-  </ul>
+<div class="sidenav">
+  <div *ngIf="loginService.loggedIn">
+    <a routerLink="/dashboard"
+      routerLinkActive="active">Dashboard</a>
+    <a routerLink="/heroes"
+      routerLinkActive="active">Heroes</a>
+    <a routerLink="/add-hero"
+      routerLinkActive="active">Add Hero</a>
+  </div>
 </div>

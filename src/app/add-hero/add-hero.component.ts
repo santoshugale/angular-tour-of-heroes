@@ -26,5 +26,5 @@ export class AddHeroComponent {
       this.location.back();
     });
   }
-  
+
 }
